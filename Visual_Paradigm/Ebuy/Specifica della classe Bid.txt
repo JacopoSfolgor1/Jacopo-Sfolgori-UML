@@ -1,0 +1,5 @@
+Specifica della classe Bid
+
+[V.Bid.istanteTraPubblicazioneScadenza] Un bid può essere registrato ad aste in corso.
+
+Per ogni b:Bid sia a:Asta tale che (a,b):asta_bid, deve essere a.scadenza >= b.istante >= a.pubblicazione.

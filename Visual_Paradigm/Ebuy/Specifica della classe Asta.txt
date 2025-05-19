@@ -1,0 +1,5 @@
+Specifica della classe Asta
+
+[V.Asta.scadenzaDopoPubblicazione] La scadenza dell'asta deve essere successiva alla sua pubblicazione.
+
+Per ogni a:Asta deve essere a.scadenza > a.pubblicazione.

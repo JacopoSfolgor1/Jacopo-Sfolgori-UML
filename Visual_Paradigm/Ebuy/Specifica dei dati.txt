@@ -1,0 +1,3 @@
+Specifica dei dati
+
+Condizione: {ottimo, buono, discreto, da sistemare}

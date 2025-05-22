@@ -4,10 +4,25 @@ Raffinamento dei requisiti
 	1.1. Username (stringa, univoca)
 	1.2. Istante di registrazione (dataora)
 	1.3. Post pubblicati (v.req. 3)
+	1.4. Se è un venditore professionale:
+		1.4.1. URL vetrina
+		1.4.2. I post pubblicati (v.req. 3)
+	1.5. Se è un utente privato:
+		1.5.1. Gli oggetti comprati in modalita "compralo subito" (v.req. 3.2)
+		1.5.2. I bid proposti (v.req. 4)
+		1.5.3. La popolarità, calcolata come:
+			- La somma tra il numero di utenti che hanno fatto bid sulle loro aste e il numero di utenti che hanno acquistato in modalita compralo subito i loro oggetti (tutto negli ultimi 12 mesi)
+	1.6. L'affidabilita, calcolata come:
+		- m*(1-z)/5 dove:
+			- "m" è la media artitmetica dei feedback
+			- z = FN/FT dove FN è il num. di feedback negativi e FT è il num. di feedback totali
+			- dove i feedback negativi sono quelli che hanno voto <= 2.
 
 2. Degli oggetti in vendita interessa:
 	2.1. Descrizione
-	2.2. La categoria (una e una sola)
+	2.2. La categoria di cui interessa:
+		2.2.1. Le sottocategorie
+		2.2.2. Ricavare dalla categoria tutte le sottocategorie
 	2.3. Se nuovo:
 		2.3.1. Numero anni garanzia (Intero >= 2)
 	2.4. Se usato:
@@ -27,6 +42,9 @@ Raffinamento dei requisiti
 		3.2.1. Prezzo (reale >= 0)
 		3.2.2. L'utente che per primo ha acquistato l'oggetto (v.req. 2)
 	3.3. Metodi di pagamento accettati (bonifico o carta di credito)
+	3.4. I feedback, di cui interessa:
+		3.4.1. Un voto (intero tra 0 e 5)
+		3.4.2. Un commento testuale (opzionale)
 
 4. Dei bid ci interessa:
 	4.1. Istante (dataora)

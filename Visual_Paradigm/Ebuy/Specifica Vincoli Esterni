@@ -1,0 +1,29 @@
+
+[V.PrivatoBid.nonSelfBid] Gli utenti privati non possono fare bid sulle aste pubblicate da loro.
+
+Per ogni istanza bt di Privato sia b istanza di Bid tale che (b,t): bid_ut, non deve esistere (b,a): asta_bid
+
+
+
+[V.cs_utCompraloSubito.pubblicazioneMinoreScadenza ] L'istante di acquisto di un post in modalità "compralo subito" deve essere successivo alla pubblicazione del post.
+
+Per ogni istanza p:CompraloSubito sia ut:Privato tale che (p,ut):cs_ut, deve essere (p,ut). istante > p.pubblicazione.
+
+
+
+[V.feedbackPost.DopoAcquistoCompraloSubitoAstaFine] I feedback dei post possono essere dati solo dopo che il post è stato acquistato in modalità "compralo subito" oppure se l'asta è terminata e ha un vincitore (cioè, almeno un bid).
+
+Per ogni istanza p: PostConFeedback sia ut: cs_ut, sia as: Asta tale che p.istante > ut oppure p.istante > as.scadenza.
+
+
+
+[V.AlberoCategorie.NoCicli]L'albero delle categorie non può formare cicli.
+
+suggerimento: date le istanze di categorie c[1], c[2], ..., c[n] dove c[1] è padre di c[2], c[2] è padre di c[3], e così via fino a "n"; non devono esserci casi in cui c[3] è padre di c[1] ad esempio.
+
+Per ogni istanza p: Categoria sia ut: super, sia cp: cat_post tale che (cp >= 1) e p.istanza > ut 
+
+
+[V.VenditoreProfPostOggetto.pubblicazioneMaggioreRegistrazione] I venditori professionali non possono pubblicare post prima di essere registrati.
+
+Per ogni istanza p:VenditoreProf sia ut: PostOggetto tale che (p,ut): post_ut, deve essere (p,ut).istante > p.registrazione.

@@ -1,0 +1,15 @@
+Specifica della classe Utente
+
+[V.Utente.nonSelfAcquisto] Un utente privato non può acquistare oggetti in modalita compralo subito venduti da lui.
+
+Non esiste u:Privato e p:CompraloSubito tale che (u,p):cs_ut e (u,p):priv_us.
+
+Equivalente:
+Per ogni u:Privato sia p:CompraloSubito tale che (u,p):priv_us non esiste (u,p):cs_ut.
+
+
+[V.Utente.pubblDopoRegistrazione] Un utente non può avere post pubblicati prima della sua registrazione.
+
+Non esiste u:Utente e p:PostOggetto tale che:
+	- (p,u):priv_us oppure (u,p):post_ut e
+	- u.registrazione > p.pubblicazione.

@@ -1,0 +1,18 @@
+Specifica classe Asta 
+
+finita(): Booleano
+	precondizioni: 
+		- nessuna
+	postcondizioni:
+		- L'operazione non modifica il livello estensionale dei dati
+		- Se adesso > this.scadenza, result = true
+		- Altrimenti result = false
+		
+
+ultimo_bid(i: DataOra): Bid[0..1]
+	precondizioni:
+		- nessuna
+	postcondizioni:
+		- L'operazione non modifica il livello estensionale dei dati
+		- Sia B l'insieme dei b:Bid coinvolti in asta_bid con this, tale che b.istante <= i. 
+		- result è il b in B con b.istante maggiore.

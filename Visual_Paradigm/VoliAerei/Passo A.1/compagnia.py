@@ -21,7 +21,7 @@ class Compagnia:
         return frozenset(self._anno)
     
     def __hash__(self) -> int:
-        return hash(self.nome(), self.anno())
+        return hash((self.nome(), self.anno()))
     
     def __eq__(self, other: Any) -> bool:
         if other is None or not isinstance(other, type(self)) or hash(self) != hash(other):

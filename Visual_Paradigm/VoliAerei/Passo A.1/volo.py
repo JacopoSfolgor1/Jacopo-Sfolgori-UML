@@ -21,7 +21,7 @@ class Volo:
         return frozenset(self._codice)
     
     def __hash__(self) -> int:
-        return hash(self.codice(), self.durata_min())
+        return hash((self.codice(), self.durata_min()))
 
     def __eq__(self, other: Any) -> bool:
         if other is None or not isinstance(other, type(self)) or hash(self) != hash(other):

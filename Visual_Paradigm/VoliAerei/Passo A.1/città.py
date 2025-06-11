@@ -24,7 +24,7 @@ class Città:
         self._abitanti = a
 
     def __hash__(self) -> int:
-        return hash(self.nome(), self.abitanti())
+        return hash((self.nome(), self.abitanti()))
     
     def __eq__(self, other: Any) -> bool:
         if other is None or not isinstance(other, type(self)) or hash(self) != hash(other):

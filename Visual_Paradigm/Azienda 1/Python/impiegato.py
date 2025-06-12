@@ -34,3 +34,6 @@ class Impiegato:
 
     def set_stipendio(self, s: RealGEZ) -> None:
         self._stipendio = s
+
+    def __repr__(self):
+        return f"nome: {self._nome} cognome: {self._cognome}"

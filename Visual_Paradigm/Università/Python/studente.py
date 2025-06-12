@@ -1,4 +1,5 @@
 from custom_types import CodiceFiscale
+from typing import Any
 import datetime
 
 
@@ -35,6 +36,14 @@ class Studente:
 
     def n_matricola(self) -> str:
         return frozenset(self._n_matricola)
+    
+    def __hash__(self) -> int:
+        return hash((self.nome(), self.cf(), self.nascita(), self.n_matricola()))
+    
+    def __eq__(self, other: Any) -> bool:
+        if other is None or not isinstance(other, type(self)) or hash(self) != hash(other):
+            return False
+        return (self.nome(), self.cf(), self.nascita(), self.n_matricola()) == (other.nome(), other.cf(), other.nascita(), other.n_matricola())
 
     def __repr__(self) -> str:
         return f"Studente(nome={self._nome})"

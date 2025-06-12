@@ -1,5 +1,4 @@
 from custom_types import IntGEZ
-from typing import Any
 
 class Corso: 
 

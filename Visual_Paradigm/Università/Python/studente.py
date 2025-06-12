@@ -1,5 +1,4 @@
 from custom_types import CodiceFiscale
-from typing import Any
 import datetime
 
 

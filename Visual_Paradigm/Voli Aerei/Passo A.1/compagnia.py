@@ -1,6 +1,4 @@
 from custom_types import IntG1900
-from typing import Any
-
 
 class Compagnia: 
 

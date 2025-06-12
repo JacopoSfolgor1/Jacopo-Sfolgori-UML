@@ -18,14 +18,6 @@ class Aeroporto:
     def codice(self) -> str:
         return frozenset(self._codice)
  
-    def __hash__(self) -> int:
-        return hash((self.nome(), self.codice()))
-
-    def __eq__(self, other: Any) -> bool:
-        if other is None or not isinstance(other, type(self)) or hash(self) != hash(other):
-            return False
-        return (self.nome(), self.codice()) == (other.nome(), other.codice())
-
     def __repr__(self) -> str:
         return f"Aeroporto(nome={self._nome})"
         

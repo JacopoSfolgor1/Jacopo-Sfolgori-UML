@@ -30,15 +30,7 @@ class Professore:
         return self._nascita
     
     def set_nascita(self, n: datetime.date) -> None:
-        self._nascita: datetime.date = n
-    
-    def __hash__(self) -> int:
-        return hash((self.nome(), self.cf(), self.nascita()))
-    
-    def __eq__(self, other: Any) -> bool:
-        if other is None or not isinstance(other, type(self)) or hash(self) != hash(other):
-            return False
-        return (self.nome(), self.cf(), self.nascita()) == (other.nome(), other.cf(), other.nascita())
+        self._nascita: datetime.date = n 
 
     def __repr__(self) -> str:
         return f"Professore(nome={self._nome})"

@@ -41,15 +41,23 @@ print("dip1.telefoni() = " + str(dip1.telefoni()))
 pegaso = Progetto("pegaso", 78000)
 biagio = Impiegato("Biagio", "Boh", date(year=1990, month=12, day=31), RealGEZ(123))
 
-pegaso.add_impiegato(biagio, date.today())
+
+#pegaso.add_impiegato(biagio, date.today())
+
+
+print(pegaso.ultimo_impiegato_coinvolto())
+
 
 print(pegaso.is_coinvolto(biagio))
+print(pegaso.is_coinvolto(alice))
+
+print(pegaso.impiegati())
+
 try:
     pegaso.add_impiegato(biagio, "domani")
 except KeyError as e:
     print(e)
     
-print(pegaso.ultimo_impiegato_coinvolto())
 try:
     pegaso.remove_impiegato(biagio)
 except KeyError as e:
@@ -59,3 +67,4 @@ try:
     pegaso.remove_impiegato(alice)
 except KeyError as e:
     print(e)
+
